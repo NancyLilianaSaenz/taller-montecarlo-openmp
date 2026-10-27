@@ -51,6 +51,8 @@ for (long b = 0; b < nbloques; b++) {
 ## Estructura
 
 ```
+Parte_I/                      Fundamento del método (pendiente: la agrega otro integrante)
+
 Parte_II/                     Implementación en OpenMP
   codigo/
     montecarlo_ref.c          programa secuencial del enunciado, sin cambios
