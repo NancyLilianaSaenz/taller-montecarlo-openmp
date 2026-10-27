@@ -1,0 +1,10 @@
+# Programas compilados (se generan con compilar.sh)
+bin/
+
+# Material del curso e informes: se entregan aparte, no van en el repositorio
+evaluacion_montecarlo_openmp.md
+examen_openmp_montecarlo*.pdf
+Evaluacion_2.md
+Revision_Parte_IV.pdf
+Parte_*/Parte_*_Informe.*
+~$*
