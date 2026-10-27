@@ -1,0 +1,16 @@
+=== Programa del enunciado, sin cambios ===
+$ ./montecarlo_ref 100000000
+Estimacion de pi: 3.141633
+
+=== Misma version con omp_get_wtime() (7 corridas) ===
+secuencial N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=1.3744 s
+secuencial N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=1.3344 s
+secuencial N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=1.3570 s
+secuencial N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=1.2980 s
+secuencial N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=1.4295 s
+secuencial N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=1.3335 s
+secuencial N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=1.4149 s
+T(1) = mediana de las 7 corridas = 1.3570 s
+
+=== Error tipico esperado ===
+q = pi/4 = 0.785398   sigma = 4*sqrt(q(1-q)/N) = 1.64e-04   1/sqrt(N) = 1e-04

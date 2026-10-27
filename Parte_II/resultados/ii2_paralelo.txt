@@ -1,0 +1,24 @@
+=== p como argumento (omp_set_num_threads) ===
+p=1 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=1.5568 s
+p=2 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.9260 s
+p=4 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.5019 s
+p=8 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.3008 s
+
+=== p con la variable OMP_NUM_THREADS ===
+$ OMP_NUM_THREADS=2 ./montecarlo 100000000
+p=2 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.8243 s
+$ OMP_NUM_THREADS=4 ./montecarlo 100000000
+p=4 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.4495 s
+
+=== Repeticion con p = 8 (debe dar siempre lo mismo) ===
+p=8 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.3858 s
+p=8 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.3619 s
+p=8 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.3347 s
+
+=== Donde empieza el flujo de cada hilo (p = 4) ===
+N=100000000  p=4  N/p=25000000  semilla base=20261018
+hilo  bloques      muestras que genera        estado inicial  rand_r secuencial  ok
+   0     0-249            0 - 24999999           20261018           20261018  si
+   1   250-499     25000000 - 49999999         1384866074         1384866074  si
+   2   500-749     50000000 - 74999999          990681498          990681498  si
+   3   750-999     75000000 - 99999999         1287180826         1287180826  si

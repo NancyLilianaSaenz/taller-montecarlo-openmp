@@ -1,0 +1,24 @@
+=== Problema 1a: todos los hilos llaman a rand() (estado global) ===
+rand_global p=1 dentro=78544668 pi=3.141787 |error|=1.94e-04 T=1.9732 s
+rand_global p=8 dentro=78540943 pi=3.141638 |error|=4.51e-05 T=15.2424 s
+rand_global p=8 dentro=78539115 pi=3.141565 |error|=2.81e-05 T=15.3532 s
+rand_global p=8 dentro=78540976 pi=3.141639 |error|=4.64e-05 T=15.0522 s
+
+=== Problema 1b: estado de rand_r compartido, sin ninguna proteccion ===
+estado_compartido p=1 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=3.1704 s
+estado_compartido p=8 dentro=78537230 pi=3.141489 |error|=1.03e-04 T=3.1510 s
+estado_compartido p=8 dentro=78539242 pi=3.141570 |error|=2.30e-05 T=2.9082 s
+estado_compartido p=8 dentro=78530751 pi=3.141230 |error|=3.63e-04 T=3.1619 s
+
+=== Problema 2: cada hilo con su generador pero con la MISMA semilla ===
+misma_semilla p=1 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=6.3137 s
+misma_semilla p=2 dentro=78541390 pi=3.141656 |error|=6.29e-05 T=1.4652 s
+misma_semilla p=4 dentro=78547336 pi=3.141893 |error|=3.01e-04 T=1.3640 s
+misma_semilla p=8 dentro=78562352 pi=3.142494 |error|=9.01e-04 T=0.7321 s
+--- referencia: secuencial con solo N/p muestras ---
+secuencial N=50000000 dentro=39270695 pi=3.141656 |error|=6.29e-05 T=0.9442 s
+secuencial N=25000000 dentro=19636834 pi=3.141893 |error|=3.01e-04 T=0.4440 s
+secuencial N=12500000 dentro=9820294 pi=3.142494 |error|=9.01e-04 T=0.2193 s
+
+=== Version final, para comparar ===
+p=8 N=100000000 dentro=78540833 pi=3.141633 |error|=4.07e-05 T=0.4588 s

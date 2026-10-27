@@ -1,0 +1,11 @@
+gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+$ gcc -O2 montecarlo_ref.c -o montecarlo_ref -lm          # tal cual el enunciado
+$ gcc -O2 -fopenmp montecarlo_secuencial.c -o montecarlo_secuencial -lm
+$ gcc -O2 -fopenmp -Wall -Wextra montecarlo.c -o montecarlo -lm
+$ gcc -O2 -fopenmp -DPLAN=dynamic montecarlo.c -o montecarlo_dynamic -lm
+$ gcc -O2 -fopenmp pruebas/rand_global.c -o rand_global -lm
+$ gcc -O2 -fopenmp pruebas/estado_compartido.c -o estado_compartido -lm
+$ gcc -O2 -fopenmp pruebas/misma_semilla.c -o misma_semilla -lm
+$ gcc -O2 -fopenmp pruebas/sin_reduccion.c -o sin_reduccion -lm
+$ gcc -O2 -fopenmp pruebas/semillas_hilos.c -o semillas_hilos -lm
+(todo compilo sin advertencias)
