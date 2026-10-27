@@ -1,0 +1,6 @@
+=== Costo de los hilos y de la reduccion (promedio de 20000 repeticiones) ===
+p=1  crear hilos:     4.8 us   region:   0.44 us   parallel for + reduction:   0.51 us
+p=2  crear hilos:   241.7 us   region:   0.90 us   parallel for + reduction:   0.96 us
+p=4  crear hilos:   527.2 us   region:   1.39 us   parallel for + reduction:   1.41 us
+p=8  crear hilos:  6634.7 us   region:  34.54 us   parallel for + reduction:   2.41 us
+(1 us = 0,000001 s; el calculo de pi con N = 10^8 tarda unos 300 000 a 1 400 000 us)

@@ -1,0 +1,15 @@
+gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0
+$ gcc -O2 -fopenmp montecarlo_secuencial.c -o montecarlo_secuencial -lm
+$ gcc -O2 -fopenmp -Wall -Wextra montecarlo.c -o montecarlo -lm
+$ gcc -O2 -fopenmp -Wall sobrecosto.c -o sobrecosto
+(todo compilo sin advertencias)
+
+$ lscpu | grep -E 'Model name|^CPU\(s\)|Thread|Core|Socket|MHz|L1d|L2|L3'
+CPU(s):                                  8
+Model name:                              AMD Ryzen 5 3450U with Radeon Vega Mobile Gfx
+Thread(s) per core:                      2
+Core(s) per socket:                      4
+Socket(s):                               1
+L1d cache:                               128 KiB (4 instances)
+L2 cache:                                2 MiB (4 instances)
+L3 cache:                                4 MiB (1 instance)
